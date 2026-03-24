@@ -69,7 +69,17 @@ Paris
 celsius
 </parameter>
 </function>
-</tool_call><|im_end|>`;
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+{"temperature": 18, "condition": "cloudy", "unit": "celsius"}
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>
+I have the Paris weather data now. Let me present it to the user.
+</think>
+
+The weather in Paris is currently 18°C and cloudy.<|im_end|>`;
 
   return (
     <div className="max-w-4xl mx-auto">

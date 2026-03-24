@@ -22,6 +22,14 @@ npm run build
 
 The static output will be in the `./out` directory.
 
+To preview the exported production site locally:
+
+```bash
+npm start
+```
+
+`npm start` runs a fresh build and serves `./out` with a static file server.
+
 ## Deployment
 
 The site is automatically deployed to GitHub Pages via the GitHub Actions workflow in `.github/workflows/deploy.yml` on every push to `main`.

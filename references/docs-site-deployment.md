@@ -19,6 +19,10 @@ This project is deployed as a static Next.js site to GitHub Pages using GitHub A
 2. Go to `Settings` -> `Pages`.
 3. Under `Source`, select `GitHub Actions`.
 4. Confirm the default branch is `main` (the workflow deploy trigger uses pushes to `main`).
+5. Optional automation path:
+   - Add repository secret `PAGES_ADMIN_TOKEN`.
+   - Use a PAT that can administer repository Pages settings (`repo` and Pages write access).
+   - With this secret present, the workflow attempts to auto-enable Pages if it is disabled.
 
 ## How To View Site Changes
 
@@ -45,3 +49,4 @@ This project is deployed as a static Next.js site to GitHub Pages using GitHub A
 1. Keep this site static-export compatible. Avoid features that require a running Next.js server at request time.
 2. `basePath` is not hardcoded. It is injected from `PAGES_BASE_PATH` in CI so the same code works for project Pages paths.
 3. `images.unoptimized` is enabled for static export compatibility with GitHub Pages.
+4. The workflow now runs an explicit Pages preflight check. If Pages is disabled, the build fails early with a clear setup error instead of failing later in `deploy-pages`.
